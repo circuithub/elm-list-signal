@@ -29,9 +29,9 @@ module List.Signal where
 @docs sigSort, sigSortBy, sigSortWith
 
 -}
-import Signal (Signal)
+import Signal exposing (Signal)
 import Signal
-import List (..)
+import List exposing (..)
 
 {-| Lifted version of `isEmpty`
 -}
@@ -121,8 +121,7 @@ infixr 5 :::
 
 {-| Lifted version of `head`
 -}
--- sigHead : Signal (List a) -> Signal (Maybe a)
-sigHead : Signal (List a) -> Signal a
+sigHead : Signal (List a) -> Signal (Maybe a)
 sigHead = Signal.map head
 
 {-| Unary-lifted version of `append` and (++)
@@ -159,14 +158,12 @@ sigProduct = Signal.map product
 
 {-| Lifted version of `maximum`
 -}
--- sigMaximum : Signal (List comparable) -> Signal (Maybe comparable)
-sigMaximum : Signal (List comparable) -> Signal comparable
+sigMaximum : Signal (List comparable) -> Signal (Maybe comparable)
 sigMaximum = Signal.map maximum
 
 {-| Lifted version of `minimum`
 -}
--- sigMinimum : Signal (List comparable) -> Signal (Maybe comparable)
-sigMinimum : Signal (List comparable) -> Signal comparable
+sigMinimum : Signal (List comparable) -> Signal (Maybe comparable)
 sigMinimum = Signal.map minimum
 
 {-| Lifted version of `partition`
